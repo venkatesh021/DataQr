@@ -11,7 +11,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = r"mssql+pyodbc://@LAPTOP-OF9OS0CA\SQLEXP
 
 
 # For pyodbc (Uncomment if using pyodbc)
-# app.config['SQLALCHEMY_DATABASE_URI'] = f"mssql+pyodbc://{DB_USERNAME}:{DB_PASSWORD}@{DB_SERVER}/{DB_NAME}?driver=ODBC+Driver+17+for+SQL+Server"
+#checking the git push
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
@@ -63,6 +63,7 @@ def add_employee():
     db.session.commit()
 
     # Generate QR Code with URL
+    
     qr_data = url_for('view_employee', emp_id=emp_id, _external=True)
     qr_path = os.path.join(QR_FOLDER, f"{emp_id}.png")
     qr = qrcode.make(qr_data)
