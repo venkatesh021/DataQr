@@ -11,7 +11,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = r"mssql+pyodbc://@LAPTOP-OF9OS0CA\SQLEXP
 
 
 # For pyodbc (Uncomment if using pyodbc)
-#checking the git push
+#checking the 2nd git push
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
