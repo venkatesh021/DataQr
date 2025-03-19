@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<div class="details-container">
+    <h2>Employee Details</h2>
+    <p><strong>Employee ID:</strong> {{ employee.id }}</p>
+    <p><strong>Name:</strong> {{ employee.name }}</p>
+    <p><strong>Phone:</strong> {{ employee.phone }}</p>
+
+    <div id="hidden-section" class="hidden-details" style="display: none;">
+        <p><strong>Email:</strong> {{ employee.email }}</p>
+        <p><strong>Address:</strong> {{ employee.address }}</p>
+        <p><strong>Emergency Contact:</strong> {{ employee.emergency_contact }}</p>
+        <p><strong>Emergency Phone:</strong> {{ employee.emergency_phone }}</p>
+        <p><strong>Password:</strong> {{ employee.password }}</p>
+    </div>
+
+    <label for="password">Enter Employee ID to Unlock:</label>
+    <input type="password" id="password" placeholder="Employee ID">
+    <button onclick="unlockDetails()">Unlock</button>
+</div>
+
+<script>
+    function unlockDetails() {
+        var inputPassword = document.getElementById('password').value;
+        var correctPassword = "{{ employee.password }}";
+
+        if (inputPassword === correctPassword) {
+            document.getElementById('hidden-section').style.display = "block";
+        } else {
+            alert("Incorrect Employee ID. Try again.");
+        }
+    }
+</script>
+
+</body>
+</html>

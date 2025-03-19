@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="details-container">
+        <h2>Employee Registered Successfully!</h2>
+        <p>Scan this QR code to view employee details:</p>
+        
+        
+        <div class="qr-code">
+            <img src="{{ qr_image }}" alt="QR Code">
+        </div>
+    
+    
+    </div>
+</body>
+</html>
